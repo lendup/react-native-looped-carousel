@@ -53,6 +53,7 @@ export default class Carousel extends Component {
     chosenBulletStyle: Text.propTypes.style,
     onAnimateNextPage: PropTypes.func,
     swipe: PropTypes.bool,
+    keyboardShouldPersistTaps: PropTypes.string,
   };
 
   static defaultProps = {
@@ -78,6 +79,7 @@ export default class Carousel extends Component {
     rightArrowText: '',
     onAnimateNextPage: undefined,
     swipe: true,
+    keyboardShouldPersistTaps: undefined,
   };
 
   constructor(props) {
@@ -360,6 +362,7 @@ export default class Carousel extends Component {
               height: size.height,
             },
           ]}
+          keyboardShouldPersistTaps={this.props.keyboardShouldPersistTaps}
         >
           {contents}
         </ScrollView>
